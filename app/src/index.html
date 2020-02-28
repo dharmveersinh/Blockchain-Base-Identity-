@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Frontend</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    <script src="https://kit.fontawesome.com/72660670d4.js" crossorigin="anonymous"></script>
+  </head>
+  <style>
+    #display{
+	display:none;
+    }
+    input {
+      display: block;
+      margin-bottom: 12px;
+    }
+  </style>
+  <body>
+  <h1>Welcome To Identity Using Blockchain</h1>
+	<div id="reg">
+	    <label for="Name">Name</label>
+	    <input
+	      type="text"
+	      id="Name"
+	      placeholder="Please Enter the name"
+	    />
+
+	   <label for="DOB">DOB</label>
+	    <input
+	      type="text"
+	      id="DOB"
+	      placeholder="Please Enter the DOB"
+	    />
+
+	    <label for="gender">Gender</label>
+	    <input
+	      type="text"
+	      id="Gender"
+	      placeholder="Please Enter the name"
+	    />
+    	    <button onclick="App.addData()">Signup</button>
+	</div>
+	<div id="display">
+		Name: <b id="name"></b><br/>
+		DOB: <b id="dob"></b><br/>
+		Gender: <b id="gender"></b><br/>
+		<div id="addhardetails">
+			<div id="displayadd" style="border:5px solid black; display:none">
+				<table>
+					<tr>
+						<td id="addharname">name</td>
+					</tr>
+					<tr>
+						<td id="addhardob">dob</td>
+					</tr>
+					<tr>
+						<td id="addhargen">gender</td>
+					</tr>
+					<tr>
+						<td id="addharaddress">address</td>
+					</tr>
+					<tr>
+						<td id="addharimage">iphash</td>
+					</tr>
+					<tr>
+						<td id="addharbool"></td>
+					</tr>
+				</table>
+			</div>
+			<div id="addAddhar" style="display:none">
+				Name:<input type="text" id="aname" placeholder="Please enter the Name"/>
+				DOB:<input type="text" id="adob" placeholder="Please enter the DOB"/>
+				Gender:<select id="asgender">
+					<option value="Male">Male</option>
+					<option value="Female">Female</option>
+				</select><br/>
+				Address:<input type="text" id="Address" placeholder="Please enter the Address"/>
+				Addharnumber:<input type="text" id="Addharnumber" placeholder="Please enter the Addharnumber"/>
+				<input type="file" onChange="App.capturefile(this)" />
+				<button name="submitadd" onClick="App.adharsubmit()">Submit</button>
+			</div>
+		</div>
+    <br/>
+		<div id="pandetails">
+      <div id="pandisplayadd" style="border:5px solid black; display:none">
+				<table>
+					<tr>
+						<td id="panname">name</td>
+					</tr>
+					<tr>
+						<td id="panfname">fname</td>
+					</tr>
+					<tr>
+						<td id="pandob">dob</td>
+					</tr>
+					<tr>
+						<td id="panimage">iphash</td>
+					</tr>
+					<tr>
+						<td id="panbool"></td>
+					</tr>
+				</table>
+			</div>
+			<div id="addPan" style="display:none">
+				Name:<input type="text" id="pname" placeholder="Please enter the Name"/>
+        FName:<input type="text" id="pfname" placeholder="Please enter the Name"/>
+				DOB:<input type="text" id="pdob" placeholder="Please enter the DOB"/>
+				Pan number:<input type="text" id="pnumber" placeholder="Please enter the Addharnumber"/>
+				<input type="file" onChange="App.capturefile(this)" />
+				<button name="submitadd" onClick="App.pansubmit()">Submit</button>
+			</div>
+		</div>
+    <br/>
+		<div id="voterdetails">
+      <div id="voterdisplayadd" style="border:5px solid black; display:none">
+				<table>
+					<tr>
+						<td id="votername">name</td>
+					</tr>
+					<tr>
+						<td id="voterfname">fname</td>
+					</tr>
+					<tr>
+						<td id="votergender">dob</td>
+					</tr>
+					<tr>
+						<td id="voterdob">iphash</td>
+					</tr>
+					<tr>
+						<td id="voteraddress"></td>
+					</tr>
+          <tr>
+              <td id="voterimage"></td>
+          </tr>
+          <tr>
+              <td id="voterbool"></td>
+          </tr>
+				</table>
+			</div>
+			<div id="addVoter" style="display:none">
+				Name:<input type="text" id="ename" placeholder="Please enter the Name"/>
+        FName:<input type="text" id="efname" placeholder="Please enter the FName"/>
+				DOB:<input type="text" id="edob" placeholder="Please enter the DOB"/>
+        Gender:<select id="esgender">
+					<option value="Male">Male</option>
+					<option value="Female">Female</option>
+				</select><br/>
+				EPIC number:<input type="text" id="enumber" placeholder="Please enter the EPIC Number"/>
+        Address: <input type="text" id="eaddress" placeholder="Please enter the Address"/>
+				<input type="file" onChange="App.capturefile(this)" />
+				<button name="submitadd" onClick="App.votersubmit()">Submit</button>
+			</div>
+		</div>
+	</div>
+  <hr/>
+  <div class="search">
+    <center><h1>Search</h1>
+    <input type="text" id="searchid" style="width:400px;height:30px" placeholder="Please enter the Search Id" />
+    <button onClick="App.search()">Search</button></center>
+    <div class="searchdisplay">
+      <div id="searchaddhardetails" style="border:5px solid black; display:none">
+				<table>
+					<tr>
+						<td id="saddharname">name</td>
+					</tr>
+					<tr>
+						<td id="saddhardob">dob</td>
+					</tr>
+					<tr>
+						<td id="saddhargen">gender</td>
+					</tr>
+					<tr>
+						<td id="saddharaddress">address</td>
+					</tr>
+					<tr>
+						<td id="saddharimage">iphash</td>
+					</tr>
+					<tr>
+						<td id="saddharbool"></td>
+					</tr>
+				</table>
+			</div>
+      <br/>
+      <div id="searchvoterdetails" style="border:5px solid black; display:none">
+				<table>
+					<tr>
+						<td id="svotername">name</td>
+					</tr>
+					<tr>
+						<td id="svoterfname">fname</td>
+					</tr>
+					<tr>
+						<td id="svotergender">dob</td>
+					</tr>
+					<tr>
+						<td id="svoterdob">iphash</td>
+					</tr>
+					<tr>
+						<td id="svoteraddress"></td>
+					</tr>
+          <tr>
+              <td id="svoterimage"></td>
+          </tr>
+          <tr>
+              <td id="svoterbool"></td>
+          </tr>
+				</table>
+			</div>
+      <br/>
+      <div id="searchpandetails" style="border:5px solid black; display:none">
+				<table>
+					<tr>
+						<td id="spanname">name</td>
+					</tr>
+					<tr>
+						<td id="spanfname">fname</td>
+					</tr>
+					<tr>
+						<td id="spandob">dob</td>
+					</tr>
+					<tr>
+						<td id="spanimage">iphash</td>
+					</tr>
+					<tr>
+						<td id="spanbool"></td>
+					</tr>
+				</table>
+		  </div>
+    </div>
+  </div>
+  <hr/>
+  <div id="requestQueue">
+    <h1>Pending Approal</h1>
+    <div class="addharrequest">
+      <h3>Addhar Request</h3>
+      <table id="arequest">
+      </table>
+      <br/>
+      <h3>Addhar Allowed</h3>
+      <table id="aallowed">
+      </table>
+      <br/>
+      <h3>Pan Requested</h3>
+      <table id="prequest">
+      </table>
+      <br/>
+      <h3>Pan Allowed</h3>
+      <table id="pallowed">
+      </table>
+      <br/>
+      <h3>Voter Requested</h3>
+      <table id="vrequest">
+      </table>
+      <br/>
+      <h3>Voter Allowed</h3>
+      <table id="vallowed">
+      </table>
+    </div>
+  </div>
+    <script src="index.js"></script>
+  </body>
+</html>
